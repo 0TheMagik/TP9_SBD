@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import './App.css'
 
 function App() {
-  // Data for the cards as provided in the assignment
   const response = {
     page: 1,
     results: [
@@ -45,17 +44,14 @@ function App() {
     ],
   };
 
-  // State for counter example
   const [count, setCount] = useState(0);
 
-  // UseEffect to show alert when count is divisible by 10
   useEffect(() => {
     if (count !== 0 && count % 10 === 0) {
       alert(`Count is now ${count}, which is divisible by 10!`);
     }
   }, [count]);
 
-  // Navigation bar component
   const Navbar = () => {
     return (
       <nav className="flex items-center justify-between p-4 bg-blue-600 text-white">
@@ -82,7 +78,6 @@ function App() {
     );
   };
 
-  // Counter component with useState and useEffect demonstration
   const Counter = () => {
     return (
       <div className="bg-gray-100 p-6 rounded-lg shadow-md max-w-md mx-auto my-8">
@@ -130,7 +125,7 @@ function App() {
               key={item.id}
               title={item.title}
               body={item.body}
-              image={`${item.image}?random=${item.id}`} // Adding random parameter to get different images
+              image={`${item.image}?random=${item.id}`} 
             />
           ))}
         </div>
